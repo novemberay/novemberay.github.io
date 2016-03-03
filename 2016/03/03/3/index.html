@@ -1,0 +1,994 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Python," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
+
+
+
+
+
+
+<meta name="description" content="变量本质是占位符变量赋值原理：a=2首先创建了一个int型对象2，然后创建了占位符a，再将a与2这个对象绑定起来完成赋值，实际上是a指向了内存中的对象2.
+##1、建立函数
+#!/usr/bin/env python
+#coding:utf-8
+
+def addnumber(a,b):  #函数声明，括号内是函数的参数，不能少冒号
+    c = a+b
+    print c
+
+if __nam">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python复习笔记3——函数">
+<meta property="og:url" content="http://novemberay.github.io/2016/03/03/3/index.html">
+<meta property="og:site_name" content="Hallo">
+<meta property="og:description" content="变量本质是占位符变量赋值原理：a=2首先创建了一个int型对象2，然后创建了占位符a，再将a与2这个对象绑定起来完成赋值，实际上是a指向了内存中的对象2.
+##1、建立函数
+#!/usr/bin/env python
+#coding:utf-8
+
+def addnumber(a,b):  #函数声明，括号内是函数的参数，不能少冒号
+    c = a+b
+    print c
+
+if __nam">
+<meta property="og:updated_time" content="2016-03-03T07:12:35.450Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python复习笔记3——函数">
+<meta name="twitter:description" content="变量本质是占位符变量赋值原理：a=2首先创建了一个int型对象2，然后创建了占位符a，再将a与2这个对象绑定起来完成赋值，实际上是a指向了内存中的对象2.
+##1、建立函数
+#!/usr/bin/env python
+#coding:utf-8
+
+def addnumber(a,b):  #函数声明，括号内是函数的参数，不能少冒号
+    c = a+b
+    print c
+
+if __nam">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> Python复习笔记3——函数 | Hallo </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Hallo</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">A site for record</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu ">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-heartbeat fa-fw"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+      
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Python复习笔记3——函数
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-03-03T15:10:57+08:00" content="2016-03-03">
+              2016-03-03
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/03/03/3/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/03/3/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><strong>变量本质是占位符</strong><br>变量赋值原理：a=2<br>首先创建了一个int型对象2，然后创建了占位符a，再将a与2这个对象绑定起来完成赋值，实际上是a指向了内存中的对象2.</p>
+<p>##1、建立函数</p>
+<pre><code>#!/usr/bin/env python
+#coding:utf-8
+
+def addnumber(a,b):  #函数声明，括号内是函数的参数，不能少冒号
+    c = a+b
+    print c
+
+if __name__ == &quot;__main__&quot;:
+    addnumber(2,3)#调用函数，a,b引用了对象2,3，也就是让a指向2，b指向3
+</code></pre><p>a+b的意义完全取决于对象的类型，在调用addnumber函数的过程中，是创立了对象2和3，然后再让参数指向它们，再执行函数体中的语句，假如让x=addnumber(2,3)，则是在运行addnumber(2,3)后再建立了addnumber(2,3)对象，并与变量x建立了关系，于是可以通过x查看运算结果。<br>在python中，将这种依赖关系，称之为<strong>多态</strong><br>跟Java、C等语言不一样的是<strong>python中为对象编写接口，而不是为数据类型。</strong></p>
+<p>一个问题：<br>代码如下，问最后输出的是5还是3</p>
+<pre><code>def ad(x):
+    d = 5
+    print d
+
+a = 3    
+if __name__ == &quot;__main__&quot;:
+    ad(a)
+</code></pre><p>答案是5。因为在函数中创建了对象5并且让d指向了它，虽然传入了3但是因为输出的是d引用的对象，所以结果还是5</p>
+<p>##2、返回值和文档<br>return在不需要返回值的函数中可以起到类似break的作用，可以中断函数流程。<br>return返回的值会被一个变量引用，如果没有返回值，那么这个变量打印出来就是None。</p>
+<p>在每个函数下面需要添加文档来说明函数功能，这个注释用三个引号括起来，类似</p>
+<pre><code>&quot;&quot;&quot;
+your explanation
+&quot;&quot;&quot;
+</code></pre><p>##3、参数和变量</p>
+<pre><code>&gt;&gt;&gt;def addnumber(x):  # x是形参，用来传对象
+       a=10           # a是变量，10是对象
+       return a+x   # x是形参作为变量，本质是传递赋给这个函数的对象
+...
+&gt;&gt;&gt;x=3              # x是变量，3是对象
+&gt;&gt;&gt;addnumber(x)     # x是参数，它由上面一行的变量x传递对象3
+13
+&gt;&gt;&gt;addnumber(3)
+13
+</code></pre><p>函数名后括号里的东西的作用是传递值</p>
+<p>##4、全局变量、局部变量、命名空间</p>
+<pre><code>a=3
+def func():
+    a=9
+    return n
+print a
+print func()
+
+3
+9
+</code></pre><p>前一个输出的是全局变量a，后一个输出的是函数的内部变量a，二者没有关系。函数内新建了一个对象9，然后让局部变量a指向了它，但并没有影响到外面的全局变量a，因此输出func()的结果是9，输出的a是3</p>
+<pre><code>a=3
+def func():
+    global a
+    a=9
+    return n
+print a
+print func()
+
+9
+9
+</code></pre><p>global a的作用是声明a是全局变量，函数里外的a是同一个，所以输出的结果都是9.</p>
+<p>命名空间<br>函数内外可能有名字一样的标识符，需要命名空间来对每个变量进行区分，并框定这个变量发生作用的范围。</p>
+<p>##5、参数收集<br>定义函数的时候，在参数前加个“*”可以让这个参数变成可变参数，即可以收集多个参数并塞到一个tuple里</p>
+<pre><code>&gt;&gt;&gt;def func(a,*arg):
+       print a
+       result = a
+       print arg
+       for i in arg:
+           result += i
+       print result
+&gt;&gt;&gt;func(1,2,3,4,5)
+1
+(2,3,4,5)
+15
+</code></pre><p>不给<em>arg传值也可以，会得到一个空tuple，如果只有一个参数传给</em>arg，要在这个参数后加一个逗号<br>此外，还可以用**karg来收集不定参数</p>
+<pre><code>&gt;&gt;&gt;def func1(**karg):
+       print karg
+&gt;&gt;&gt;func1(a=1,b=2,c=3)
+{&apos;a&apos;:1,&apos;b&apos;:2,&apos;c&apos;:3}
+</code></pre><p>用**karg来收集值，会得到dict类型的数据，但在传值的时候要说明键和值<br>如果不知道自己要输入什么类型参数，可以用以下函数来收集参数</p>
+<pre><code>&gt;&gt;&gt;def func2(x,y,*arg,**karg):
+       print x
+       print y
+       print arg
+       print karg
+</code></pre><p>还可以使用元组传值</p>
+<pre><code>&gt;&gt;&gt;def addnumber(x,y):
+       return x+y
+&gt;&gt;&gt;a=(3,5)
+&gt;&gt;&gt;addnumber(*a)
+8
+</code></pre><p>这种方式是把要传的值放到一个元组中，元组中元素的个数要和函数要求的变量个数一致。<br>定义函数的时候可以给一些参数赋默认值，这样在调用的时候就可以不给对应参数赋值</p>
+<p>##6、递归<br>用递归写一个斐波那契数列</p>
+<pre><code>&gt;&gt;&gt;def fib(n):
+       if n==0:
+           return 0
+       if n==1:
+           return 1
+       else:
+           return fib(n-1)+fib(n-2)
+
+&gt;&gt;&gt;fib(10)
+55
+</code></pre><p>##7、函数式编程</p>
+<p>###lambda函数<br>单行函数</p>
+<pre><code>&gt;&gt;&gt;a = range(1,11)
+&gt;&gt;&gt;a
+[1,2,3,4,5,6,7,8,9,10]
+&gt;&gt;&gt;lam = lambda x: x+3
+&gt;&gt;&gt;b=[]
+&gt;&gt;&gt;for i in a:
+       b.append(lam(i))
+&gt;&gt;&gt;b
+[4,5,6,7,8,9,10,11,12,13]
+</code></pre><p>lambda函数使用方法：</p>
+<ul>
+<li>lambda后面直接跟变量，变量可以是多个</li>
+<li>变量后是冒号，冒号后是表达式，表达式只能有一个</li>
+<li>表达式返回的结果就是函数的返回值</li>
+</ul>
+<p>###map函数</p>
+<pre><code>&gt;&gt;&gt;a = range(1,6)
+&gt;&gt;&gt;a
+[1,2,3,4,5]
+&gt;&gt;&gt;map(lambda x:x+3,a)
+&gt;&gt;&gt;[4,5,6,7,8]
+</code></pre><p>map(func,seq)<br>func是要套用在序列对象seq上的函数</p>
+<ul>
+<li>seq是可迭代的，对每个元素都使用func算一遍</li>
+<li>将所有结果返回一个list</li>
+<li><p>若参数很多则对那些参数执行func<br>当然也可以用列表解析实现map函数的功能</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>[ x+3 for x in a]<br> [4,5,6,7,8]<br>多参数的情况：</p>
+<p>list1=[1,2,3,4,5]<br>list2=[2,3,4,5,6]<br>list3=[3,4,5,6,7]<br>map(lambda x,y,z: x+y+z, list1,list2,list3)<br> [6,9,12,15,18]</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
+</ul>
+<p>###reduce函数</p>
+<pre><code>&gt;&gt;&gt;list1=[1,2,3,4,5]
+&gt;&gt;&gt;reduce(lambda x,y:x+y, list1)
+15
+</code></pre><p>reduce是逐个元素横着进行运算</p>
+<p>###filter函数</p>
+<pre><code>&gt;&gt;&gt;list1=range(-3,3)
+&gt;&gt;&gt;list1
+[-3,-2,-1,0,1,2]
+&gt;&gt;&gt;filter(lambda x:x&gt;0, list1)
+[1,2]
+</code></pre><p>##练习</p>
+<p>###解一元二次方程<br>可以实现用户输入4个参数，解方程后打印结果</p>
+<pre><code>#!/usr/bin/env python
+# coding=utf-8
+
+import math
+
+def solutioned(a,b,c,d):
+    delta = b*b - 4*a*c
+    if delta&lt;0:
+        return &quot;no solution&quot;
+    elif delta==0:
+        return -(b/(2*a))
+    else:
+        delta1 = math.sqrt(delta)
+        x1 =(-b + delta1)/(2*a)
+        x2 =(-b - delta1)/(2*a)
+        return x1,x2
+
+if __name__ == &quot;__main__&quot;:
+    print &quot;please input a,b,c,d as parameters of the equations: &quot;
+    print &quot;a = &quot;,
+    a = int(raw_input())
+    print &quot;b = &quot;,
+    b = int(raw_input())
+    print &quot;c = &quot;,
+    c = int(raw_input())
+    print &quot;d = &quot;,
+    d = int(raw_input())
+    print &quot;computing...{}x2+{}x+{}={}&quot;.format(a,b,c,d)
+    roots = solutioned(a,b,c,d)
+    print &quot;the result is : &quot;, roots`
+</code></pre><p>###2、成绩统计<br>算平均分、排序、找最高分和最低分</p>
+<pre><code>def average_score(scores):
+    score_values = grades_sheet.values()
+    average = reduce(lambda x,y:x+y, score_values)/len(score_values)
+    return average
+
+def rank_score(scores):
+    score_lst = [(scores[k],k) for k in scores]
+    sort_lst = sorted(score_lst,reverse=True)
+    return [(m[1],m[0]) for m in sort_lst]
+
+def high_grades(scores):
+    lst = rank_score(scores)
+    maxscore = lst[0][1]
+    return lst[0]
+
+def low_grades(scores):
+    lst = rank_score(scores)
+    minscore = lst[len(lst)-1][1]
+    return lst[len(lst)-1]
+
+if __name__ == &quot;__main__&quot;:
+    grades_sheet = {&apos;amy&apos;:98,&apos;bob&apos;:89,&apos;cindy&apos;:94,&apos;david&apos;:78,&apos;eric&apos;:85,&apos;frank&apos;:69}
+    ave = average_score(grades_sheet)
+    print &quot;the average score is &quot;, ave
+    rank = rank_score(grades_sheet)
+    print &quot;the rank is:\n&quot;,rank
+    goodstu = high_grades(grades_sheet)
+    print &quot;students get high score: &quot;,goodstu
+    moderate = low_grades(grades_sheet)
+    print &quot;students need to be more diligent: &quot;,moderate
+</code></pre>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Python/" rel="tag">#Python</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/02/07/2/" rel="next" title="Python复习笔记2--语句和文件">
+                <i class="fa fa-chevron-left"></i> Python复习笔记2--语句和文件
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/03/03/3/"
+           data-title="Python复习笔记3——函数" data-url="http://novemberay.github.io/2016/03/03/3/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="Kim" />
+          <p class="site-author-name" itemprop="name">Kim</p>
+          <p class="site-description motion-element" itemprop="description">If you don't have ability you wind up playing in a rock band</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+          
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/novemberay" target="_blank">
+                  
+                    <i class="fa fa-github"></i> GitHub
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/novemberay" target="_blank">
+                  
+                    <i class="fa fa-twitter"></i> Twitter
+                  
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015.1 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Kim</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  
+
+
+  
+
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+  
+  
+<script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    NexT.motion.middleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+
+      if (CONFIG.sidebar === 'post') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          NexT.utils.displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"novemberye"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+  </script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for (i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  </script>
+
+  
+    <script type="text/javascript" src="http://cdn.staticfile.org/mathjax/2.4.0/MathJax.js"></script>
+    <script type="text/javascript" src="http://cdn.staticfile.org/mathjax/2.4.0/config/TeX-AMS-MML_HTMLorMML.js"></script>
+  
+
+
+  
+  
+
+
+</body>
+</html>
