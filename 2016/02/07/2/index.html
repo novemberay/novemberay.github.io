@@ -57,8 +57,7 @@
 
 
 
-<meta name="description" content="##1、语句
-###赋值对换a,b的值传统写法
+<meta name="description" content="1、语句赋值对换a,b的值传统写法
 a=9,b=5
 temp=a
 a=b
@@ -71,13 +70,12 @@ Python写法：
 5
 &amp;gt;&amp;gt;&amp;gt;b
 3
-因为Python中的变量是指向对象的，所以a,b=b,a相当于将a,b标签对调，即让a指向b所指向的对象，让b指">
+因为Python中的变量是指向对象的，所以a,b=b,a相当于将a,b标签对调，即让a指向b所指向的对象，让b指向a所指向的">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python复习笔记2--语句和文件">
 <meta property="og:url" content="http://novemberay.github.io/2016/02/07/2/index.html">
 <meta property="og:site_name" content="Hallo">
-<meta property="og:description" content="##1、语句
-###赋值对换a,b的值传统写法
+<meta property="og:description" content="1、语句赋值对换a,b的值传统写法
 a=9,b=5
 temp=a
 a=b
@@ -90,12 +88,11 @@ Python写法：
 5
 &amp;gt;&amp;gt;&amp;gt;b
 3
-因为Python中的变量是指向对象的，所以a,b=b,a相当于将a,b标签对调，即让a指向b所指向的对象，让b指">
-<meta property="og:updated_time" content="2016-03-03T07:11:50.910Z">
+因为Python中的变量是指向对象的，所以a,b=b,a相当于将a,b标签对调，即让a指向b所指向的对象，让b指向a所指向的">
+<meta property="og:updated_time" content="2016-03-03T07:38:52.761Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python复习笔记2--语句和文件">
-<meta name="twitter:description" content="##1、语句
-###赋值对换a,b的值传统写法
+<meta name="twitter:description" content="1、语句赋值对换a,b的值传统写法
 a=9,b=5
 temp=a
 a=b
@@ -108,7 +105,7 @@ Python写法：
 5
 &amp;gt;&amp;gt;&amp;gt;b
 3
-因为Python中的变量是指向对象的，所以a,b=b,a相当于将a,b标签对调，即让a指向b所指向的对象，让b指">
+因为Python中的变量是指向对象的，所以a,b=b,a相当于将a,b标签对调，即让a指向b所指向的对象，让b指向a所指向的">
 
 
 
@@ -321,8 +318,7 @@ Python写法：
       
 
       
-        <p>##1、语句</p>
-<p>###赋值<br>对换a,b的值<br>传统写法</p>
+        <h2 id="1_u3001_u8BED_u53E5"><a href="#1_u3001_u8BED_u53E5" class="headerlink" title="1、语句"></a>1、语句</h2><h3 id="u8D4B_u503C"><a href="#u8D4B_u503C" class="headerlink" title="赋值"></a>赋值</h3><p>对换a,b的值<br>传统写法</p>
 <pre><code>a=9,b=5
 temp=a
 a=b
@@ -336,9 +332,7 @@ b=temp
 &gt;&gt;&gt;b
 3
 </code></pre><p>因为Python中的变量是指向对象的，所以a,b=b,a相当于将a,b标签对调，即让a指向b所指向的对象，让b指向a所指向的对象</p>
-<p>##2、条件语句</p>
-<p>###三元操作符</p>
-<pre><code>&gt;&gt;&gt;a=8
+<h2 id="2_u3001_u6761_u4EF6_u8BED_u53E5"><a href="#2_u3001_u6761_u4EF6_u8BED_u53E5" class="headerlink" title="2、条件语句"></a>2、条件语句</h2><h3 id="u4E09_u5143_u64CD_u4F5C_u7B26"><a href="#u4E09_u5143_u64CD_u4F5C_u7B26" class="headerlink" title="三元操作符"></a>三元操作符</h3><pre><code>&gt;&gt;&gt;a=8
 &gt;&gt;&gt;b=9 if (a==8) else 10
 &gt;&gt;&gt;b
 9
@@ -346,9 +340,8 @@ b=temp
 &gt;&gt;&gt;b
 10
 </code></pre><p>A if X else B<br>如果X为真就执行A否则执行B</p>
-<p>##3、循环语句</p>
-<p>###for循环<br>所有序列类型的对象都可以用for来循环</p>
-<p>###range函数<br>一般形式是range(start, stop[, step])</p>
+<h2 id="3_u3001_u5FAA_u73AF_u8BED_u53E5"><a href="#3_u3001_u5FAA_u73AF_u8BED_u53E5" class="headerlink" title="3、循环语句"></a>3、循环语句</h2><h3 id="for_u5FAA_u73AF"><a href="#for_u5FAA_u73AF" class="headerlink" title="for循环"></a>for循环</h3><p>所有序列类型的对象都可以用for来循环</p>
+<h3 id="range_u51FD_u6570"><a href="#range_u51FD_u6570" class="headerlink" title="range函数"></a>range函数</h3><p>一般形式是range(start, stop[, step])</p>
 <ul>
 <li>start：开始数值，默认为0,也就是如果不写这项，就是认为start=0</li>
 <li>stop：结束的数值，必须要写的。</li>
@@ -369,8 +362,7 @@ amy 8
 bob 6
 cindy 3
 </code></pre><p>使用迭代器的效率会更高，一般不推荐使用第二种方法，对单独取keys或单独取values同理，推荐使用迭代器</p>
-<p>###zip函数</p>
-<pre><code>&gt;&gt;&gt;a=&apos;hello&apos;
+<h3 id="zip_u51FD_u6570"><a href="#zip_u51FD_u6570" class="headerlink" title="zip函数"></a>zip函数</h3><pre><code>&gt;&gt;&gt;a=&apos;hello&apos;
 &gt;&gt;&gt;b=&apos;wherever&apos;
 &gt;&gt;&gt;zip(a,b)
 [(&apos;h&apos;,&apos;w&apos;),(&apos;e&apos;,&apos;h&apos;),(&apos;l&apos;,e&apos;),(&apos;l&apos;,&apos;r&apos;),(&apos;o&apos;,&apos;e&apos;)]
@@ -393,18 +385,18 @@ cindy 3
 {&apos;amy&apos;:8,&apos;bob&apos;:6,&apos;cindy&apos;:3}
 &gt;&gt;&gt;dict(zip(adict.values(),adict.keys())))
 {8:&apos;amy&apos;,6:&apos;bob&apos;,3:&apos;cindy&apos;}
-</code></pre><p>###enumerate<br>enumerate是枚举类型的对象，带索引值，如：</p>
+</code></pre><h3 id="enumerate"><a href="#enumerate" class="headerlink" title="enumerate"></a>enumerate</h3><p>enumerate是枚举类型的对象，带索引值，如：</p>
 <pre><code>&gt;&gt;&gt;for k,v in enumerate(adict,start=1):
        print k,v
 1 amy
 2 bob
 3 cindy
 </code></pre><p>enumerate对象的内容可以用list进行转换，也就是说是可以迭代的</p>
-<p>###list解析<br>去掉每个元素前后的逗号</p>
+<h3 id="list_u89E3_u6790"><a href="#list_u89E3_u6790" class="headerlink" title="list解析"></a>list解析</h3><p>去掉每个元素前后的逗号</p>
 <pre><code>&gt;&gt;&gt;squares=[&apos;,111&apos;,&apos;23,43&apos;,&apos;354,&apos;]
 &gt;&gt;&gt;[i.strip(&apos;,&apos;) for i in squares]
 [&apos;111&apos;,&apos;23,43&apos;,&apos;354&apos;]
-</code></pre><p>###while语句<br>while…less循环<br>while的循环条件不满足后就执行less中的语句</p>
+</code></pre><h3 id="while_u8BED_u53E5"><a href="#while_u8BED_u53E5" class="headerlink" title="while语句"></a>while语句</h3><p>while…less循环<br>while的循环条件不满足后就执行less中的语句</p>
 <pre><code>&gt;&gt;&gt;a=0
 &gt;&gt;&gt;while a&lt;3:
        print a,
@@ -413,31 +405,25 @@ cindy 3
 0 1 2 
 3 is not less than 3
 </code></pre><p>for…else循环<br>同样else后的语句也是在for所有循环后做</p>
-<p>##4、文件</p>
-<p>###打开读取文件</p>
-<pre><code>&gt;&gt;&gt;f=open(&apos;130.txt&apos;)
+<h2 id="4_u3001_u6587_u4EF6"><a href="#4_u3001_u6587_u4EF6" class="headerlink" title="4、文件"></a>4、文件</h2><h3 id="u6253_u5F00_u8BFB_u53D6_u6587_u4EF6"><a href="#u6253_u5F00_u8BFB_u53D6_u6587_u4EF6" class="headerlink" title="打开读取文件"></a>打开读取文件</h3><pre><code>&gt;&gt;&gt;f=open(&apos;130.txt&apos;)
 &gt;&gt;&gt;for line in f:
        print line
 &gt;&gt;&gt;f.close()
-</code></pre><p>###创建写入文件</p>
-<pre><code>&gt;&gt;&gt;f=open(&apos;131.txt&apos;,&apos;w&apos;)
+</code></pre><h3 id="u521B_u5EFA_u5199_u5165_u6587_u4EF6"><a href="#u521B_u5EFA_u5199_u5165_u6587_u4EF6" class="headerlink" title="创建写入文件"></a>创建写入文件</h3><pre><code>&gt;&gt;&gt;f=open(&apos;131.txt&apos;,&apos;w&apos;)
 &gt;&gt;&gt;f.write(&apos;hello, world.&apos;)
 &gt;&gt;&gt;f.close()
-</code></pre><p>###使用with</p>
-<pre><code>&gt;&gt;&gt;with open(&apos;131.txt&apos;,&apos;a&apos;) as f:
+</code></pre><h3 id="u4F7F_u7528with"><a href="#u4F7F_u7528with" class="headerlink" title="使用with"></a>使用with</h3><pre><code>&gt;&gt;&gt;with open(&apos;131.txt&apos;,&apos;a&apos;) as f:
        f.write(&quot;\n This is about with\n&quot;)
 ...
 &gt;&gt;&gt;with open(&apos;131.txt&apos;,&apos;r&apos;) as f:
        print f.read()
 </code></pre><p>其中a是追加模式，即一打开文件光标就移到文件尾端，如果不存在这个文件则会创建文件。<br>使用with方法就不用close()了，可以执行完操作自动关闭文件。</p>
-<p>###查看文件状态</p>
-<pre><code>&gt;&gt;&gt;import os
+<h3 id="u67E5_u770B_u6587_u4EF6_u72B6_u6001"><a href="#u67E5_u770B_u6587_u4EF6_u72B6_u6001" class="headerlink" title="查看文件状态"></a>查看文件状态</h3><pre><code>&gt;&gt;&gt;import os
 &gt;&gt;&gt;file_stat=os.stat(&apos;baiducookie.txt&apos;)
 &gt;&gt;&gt;file_stat #可以查看文件状态
 &gt;&gt;&gt;import time
 &gt;&gt;&gt;time.localtime(file_stat.st_ctime)#可以查看文件创建时间
-</code></pre><p>###read/readline/readlines</p>
-<p>read方法，如果指定了参数就读这么长的文件，如果没指定参数就读取全文，把读出来的内容全部放到一个字符串中。<br>readline()方法，执行一次读一行，可迭代。<br>readlines()方法，先执行readline()方法，将文件中的每行变成一个列表的元素存储在一个列表中，然后返回列表，也是可迭代的</p>
+</code></pre><h3 id="read/readline/readlines"><a href="#read/readline/readlines" class="headerlink" title="read/readline/readlines"></a>read/readline/readlines</h3><p>read方法，如果指定了参数就读这么长的文件，如果没指定参数就读取全文，把读出来的内容全部放到一个字符串中。<br>readline()方法，执行一次读一行，可迭代。<br>readlines()方法，先执行readline()方法，将文件中的每行变成一个列表的元素存储在一个列表中，然后返回列表，也是可迭代的</p>
 <pre><code>f=open(&apos;131.txt&apos;,&apos;r&apos;)
 while True:
     if not line:
@@ -450,12 +436,12 @@ content#会返回一个列表里面装着131.txt的每一行作为一个元素
 for line in content:
     print line,
 #可以打印整个文件，有分行
-</code></pre><p>###fileinput模块<br>可以用来打开比较大的文件，可迭代</p>
+</code></pre><h3 id="fileinput_u6A21_u5757"><a href="#fileinput_u6A21_u5757" class="headerlink" title="fileinput模块"></a>fileinput模块</h3><p>可以用来打开比较大的文件，可迭代</p>
 <pre><code>&gt;&gt;&gt;import fileinput
 &gt;&gt;&gt;for line in fileinput.input(&apos;131.txt&apos;):
        print line,
        #可以打印整个文件，有分行
-</code></pre><p>##练习<br>1、按照下面的要求实现对列表的操作：</p>
+</code></pre><h2 id="u7EC3_u4E60"><a href="#u7EC3_u4E60" class="headerlink" title="练习"></a>练习</h2><p>1、按照下面的要求实现对列表的操作：</p>
 <p>产生一个列表，其中有40个元素，每个元素是0到100的一个随机整数<br>如果这个列表中的数据代表着某个班级40人的分数，请计算成绩低于平均分的学生人数，并输出<br>对上面的列表元素从大到小排序</p>
 <pre><code>import random
 l = []
@@ -649,7 +635,7 @@ b = a.split()
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1_u3001_u8BED_u53E5"><span class="nav-number">1.</span> <span class="nav-text">1、语句</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u8D4B_u503C"><span class="nav-number">1.1.</span> <span class="nav-text">赋值</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2_u3001_u6761_u4EF6_u8BED_u53E5"><span class="nav-number">2.</span> <span class="nav-text">2、条件语句</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u4E09_u5143_u64CD_u4F5C_u7B26"><span class="nav-number">2.1.</span> <span class="nav-text">三元操作符</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3_u3001_u5FAA_u73AF_u8BED_u53E5"><span class="nav-number">3.</span> <span class="nav-text">3、循环语句</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#for_u5FAA_u73AF"><span class="nav-number">3.1.</span> <span class="nav-text">for循环</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#range_u51FD_u6570"><span class="nav-number">3.2.</span> <span class="nav-text">range函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#zip_u51FD_u6570"><span class="nav-number">3.3.</span> <span class="nav-text">zip函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#enumerate"><span class="nav-number">3.4.</span> <span class="nav-text">enumerate</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#list_u89E3_u6790"><span class="nav-number">3.5.</span> <span class="nav-text">list解析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#while_u8BED_u53E5"><span class="nav-number">3.6.</span> <span class="nav-text">while语句</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4_u3001_u6587_u4EF6"><span class="nav-number">4.</span> <span class="nav-text">4、文件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u6253_u5F00_u8BFB_u53D6_u6587_u4EF6"><span class="nav-number">4.1.</span> <span class="nav-text">打开读取文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u521B_u5EFA_u5199_u5165_u6587_u4EF6"><span class="nav-number">4.2.</span> <span class="nav-text">创建写入文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u4F7F_u7528with"><span class="nav-number">4.3.</span> <span class="nav-text">使用with</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u67E5_u770B_u6587_u4EF6_u72B6_u6001"><span class="nav-number">4.4.</span> <span class="nav-text">查看文件状态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#read/readline/readlines"><span class="nav-number">4.5.</span> <span class="nav-text">read/readline/readlines</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#fileinput_u6A21_u5757"><span class="nav-number">4.6.</span> <span class="nav-text">fileinput模块</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u7EC3_u4E60"><span class="nav-number">5.</span> <span class="nav-text">练习</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">

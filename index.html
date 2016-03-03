@@ -291,9 +291,8 @@
       
         
           
-            <p><strong>变量本质是占位符</strong><br>变量赋值原理：a=2<br>首先创建了一个int型对象2，然后创建了占位符a，再将a与2这个对象绑定起来完成赋值，实际上是a指向了内存中的对象2.</p>
-<p>##1、建立函数</p>
-<pre><code>#!/usr/bin/env python
+            <p><strong> 变量本质是占位符 </strong><br>变量赋值原理：a=2<br>首先创建了一个int型对象2，然后创建了占位符a，再将a与2这个对象绑定起来完成赋值，实际上是a指向了内存中的对象2.</p>
+<h2 id="1_u3001_u5EFA_u7ACB_u51FD_u6570"><a href="#1_u3001_u5EFA_u7ACB_u51FD_u6570" class="headerlink" title="1、建立函数"></a>1、建立函数</h2><pre><code>#!/usr/bin/env python
 #coding:utf-8
 
 def addnumber(a,b):  #函数声明，括号内是函数的参数，不能少冒号
@@ -317,8 +316,7 @@ if __name__ == &quot;__main__&quot;:
 <pre><code>&quot;&quot;&quot;
 your explanation
 &quot;&quot;&quot;
-</code></pre><p>##3、参数和变量</p>
-<pre><code>&gt;&gt;&gt;def addnumber(x):  # x是形参，用来传对象
+</code></pre><h2 id="3_u3001_u53C2_u6570_u548C_u53D8_u91CF"><a href="#3_u3001_u53C2_u6570_u548C_u53D8_u91CF" class="headerlink" title="3、参数和变量"></a>3、参数和变量</h2><pre><code>&gt;&gt;&gt;def addnumber(x):  # x是形参，用来传对象
        a=10           # a是变量，10是对象
        return a+x   # x是形参作为变量，本质是传递赋给这个函数的对象
 ...
@@ -328,8 +326,7 @@ your explanation
 &gt;&gt;&gt;addnumber(3)
 13
 </code></pre><p>函数名后括号里的东西的作用是传递值</p>
-<p>##4、全局变量、局部变量、命名空间</p>
-<pre><code>a=3
+<h2 id="4_u3001_u5168_u5C40_u53D8_u91CF_u3001_u5C40_u90E8_u53D8_u91CF_u3001_u547D_u540D_u7A7A_u95F4"><a href="#4_u3001_u5168_u5C40_u53D8_u91CF_u3001_u5C40_u90E8_u53D8_u91CF_u3001_u547D_u540D_u7A7A_u95F4" class="headerlink" title="4、全局变量、局部变量、命名空间"></a>4、全局变量、局部变量、命名空间</h2><pre><code>a=3
 def func():
     a=9
     return n
@@ -351,7 +348,7 @@ print func()
 9
 </code></pre><p>global a的作用是声明a是全局变量，函数里外的a是同一个，所以输出的结果都是9.</p>
 <p>命名空间<br>函数内外可能有名字一样的标识符，需要命名空间来对每个变量进行区分，并框定这个变量发生作用的范围。</p>
-<p>##5、参数收集<br>定义函数的时候，在参数前加个“*”可以让这个参数变成可变参数，即可以收集多个参数并塞到一个tuple里</p>
+<h2 id="5_u3001_u53C2_u6570_u6536_u96C6"><a href="#5_u3001_u53C2_u6570_u6536_u96C6" class="headerlink" title="5、参数收集"></a>5、参数收集</h2><p>定义函数的时候，在参数前加个“*”可以让这个参数变成可变参数，即可以收集多个参数并塞到一个tuple里</p>
 <pre><code>&gt;&gt;&gt;def func(a,*arg):
        print a
        result = a
@@ -381,7 +378,7 @@ print func()
 &gt;&gt;&gt;addnumber(*a)
 8
 </code></pre><p>这种方式是把要传的值放到一个元组中，元组中元素的个数要和函数要求的变量个数一致。<br>定义函数的时候可以给一些参数赋默认值，这样在调用的时候就可以不给对应参数赋值</p>
-<p>##6、递归<br>用递归写一个斐波那契数列</p>
+<h2 id="6_u3001_u9012_u5F52"><a href="#6_u3001_u9012_u5F52" class="headerlink" title="6、递归"></a>6、递归</h2><p>用递归写一个斐波那契数列</p>
 <pre><code>&gt;&gt;&gt;def fib(n):
        if n==0:
            return 0
@@ -392,8 +389,7 @@ print func()
 
 &gt;&gt;&gt;fib(10)
 55
-</code></pre><p>##7、函数式编程</p>
-<p>###lambda函数<br>单行函数</p>
+</code></pre><h2 id="7_u3001_u51FD_u6570_u5F0F_u7F16_u7A0B"><a href="#7_u3001_u51FD_u6570_u5F0F_u7F16_u7A0B" class="headerlink" title="7、函数式编程"></a>7、函数式编程</h2><h3 id="lambda_u51FD_u6570"><a href="#lambda_u51FD_u6570" class="headerlink" title="lambda函数"></a>lambda函数</h3><p>单行函数</p>
 <pre><code>&gt;&gt;&gt;a = range(1,11)
 &gt;&gt;&gt;a
 [1,2,3,4,5,6,7,8,9,10]
@@ -409,8 +405,7 @@ print func()
 <li>变量后是冒号，冒号后是表达式，表达式只能有一个</li>
 <li>表达式返回的结果就是函数的返回值</li>
 </ul>
-<p>###map函数</p>
-<pre><code>&gt;&gt;&gt;a = range(1,6)
+<h3 id="map_u51FD_u6570"><a href="#map_u51FD_u6570" class="headerlink" title="map函数"></a>map函数</h3><pre><code>&gt;&gt;&gt;a = range(1,6)
 &gt;&gt;&gt;a
 [1,2,3,4,5]
 &gt;&gt;&gt;map(lambda x:x+3,a)
@@ -430,19 +425,16 @@ print func()
 </blockquote>
 </li>
 </ul>
-<p>###reduce函数</p>
-<pre><code>&gt;&gt;&gt;list1=[1,2,3,4,5]
+<h3 id="reduce_u51FD_u6570"><a href="#reduce_u51FD_u6570" class="headerlink" title="reduce函数"></a>reduce函数</h3><pre><code>&gt;&gt;&gt;list1=[1,2,3,4,5]
 &gt;&gt;&gt;reduce(lambda x,y:x+y, list1)
 15
 </code></pre><p>reduce是逐个元素横着进行运算</p>
-<p>###filter函数</p>
-<pre><code>&gt;&gt;&gt;list1=range(-3,3)
+<h3 id="filter_u51FD_u6570"><a href="#filter_u51FD_u6570" class="headerlink" title="filter函数"></a>filter函数</h3><pre><code>&gt;&gt;&gt;list1=range(-3,3)
 &gt;&gt;&gt;list1
 [-3,-2,-1,0,1,2]
 &gt;&gt;&gt;filter(lambda x:x&gt;0, list1)
 [1,2]
-</code></pre><p>##练习</p>
-<p>###解一元二次方程<br>可以实现用户输入4个参数，解方程后打印结果</p>
+</code></pre><h2 id="u7EC3_u4E60"><a href="#u7EC3_u4E60" class="headerlink" title="练习"></a>练习</h2><h3 id="u89E3_u4E00_u5143_u4E8C_u6B21_u65B9_u7A0B"><a href="#u89E3_u4E00_u5143_u4E8C_u6B21_u65B9_u7A0B" class="headerlink" title="解一元二次方程"></a>解一元二次方程</h3><p>可以实现用户输入4个参数，解方程后打印结果</p>
 <pre><code>#!/usr/bin/env python
 # coding=utf-8
 
@@ -473,7 +465,7 @@ if __name__ == &quot;__main__&quot;:
     print &quot;computing...{}x2+{}x+{}={}&quot;.format(a,b,c,d)
     roots = solutioned(a,b,c,d)
     print &quot;the result is : &quot;, roots`
-</code></pre><p>###2、成绩统计<br>算平均分、排序、找最高分和最低分</p>
+</code></pre><h3 id="2_u3001_u6210_u7EE9_u7EDF_u8BA1"><a href="#2_u3001_u6210_u7EE9_u7EDF_u8BA1" class="headerlink" title="2、成绩统计"></a>2、成绩统计</h3><p>算平均分、排序、找最高分和最低分</p>
 <pre><code>def average_score(scores):
     score_values = grades_sheet.values()
     average = reduce(lambda x,y:x+y, score_values)/len(score_values)
@@ -594,8 +586,7 @@ if __name__ == &quot;__main__&quot;:
       
         
           
-            <p>##1、语句</p>
-<p>###赋值<br>对换a,b的值<br>传统写法</p>
+            <h2 id="1_u3001_u8BED_u53E5"><a href="#1_u3001_u8BED_u53E5" class="headerlink" title="1、语句"></a>1、语句</h2><h3 id="u8D4B_u503C"><a href="#u8D4B_u503C" class="headerlink" title="赋值"></a>赋值</h3><p>对换a,b的值<br>传统写法</p>
 <pre><code>a=9,b=5
 temp=a
 a=b
@@ -609,9 +600,7 @@ b=temp
 &gt;&gt;&gt;b
 3
 </code></pre><p>因为Python中的变量是指向对象的，所以a,b=b,a相当于将a,b标签对调，即让a指向b所指向的对象，让b指向a所指向的对象</p>
-<p>##2、条件语句</p>
-<p>###三元操作符</p>
-<pre><code>&gt;&gt;&gt;a=8
+<h2 id="2_u3001_u6761_u4EF6_u8BED_u53E5"><a href="#2_u3001_u6761_u4EF6_u8BED_u53E5" class="headerlink" title="2、条件语句"></a>2、条件语句</h2><h3 id="u4E09_u5143_u64CD_u4F5C_u7B26"><a href="#u4E09_u5143_u64CD_u4F5C_u7B26" class="headerlink" title="三元操作符"></a>三元操作符</h3><pre><code>&gt;&gt;&gt;a=8
 &gt;&gt;&gt;b=9 if (a==8) else 10
 &gt;&gt;&gt;b
 9
@@ -619,9 +608,8 @@ b=temp
 &gt;&gt;&gt;b
 10
 </code></pre><p>A if X else B<br>如果X为真就执行A否则执行B</p>
-<p>##3、循环语句</p>
-<p>###for循环<br>所有序列类型的对象都可以用for来循环</p>
-<p>###range函数<br>一般形式是range(start, stop[, step])</p>
+<h2 id="3_u3001_u5FAA_u73AF_u8BED_u53E5"><a href="#3_u3001_u5FAA_u73AF_u8BED_u53E5" class="headerlink" title="3、循环语句"></a>3、循环语句</h2><h3 id="for_u5FAA_u73AF"><a href="#for_u5FAA_u73AF" class="headerlink" title="for循环"></a>for循环</h3><p>所有序列类型的对象都可以用for来循环</p>
+<h3 id="range_u51FD_u6570"><a href="#range_u51FD_u6570" class="headerlink" title="range函数"></a>range函数</h3><p>一般形式是range(start, stop[, step])</p>
 <ul>
 <li>start：开始数值，默认为0,也就是如果不写这项，就是认为start=0</li>
 <li>stop：结束的数值，必须要写的。</li>
@@ -642,8 +630,7 @@ amy 8
 bob 6
 cindy 3
 </code></pre><p>使用迭代器的效率会更高，一般不推荐使用第二种方法，对单独取keys或单独取values同理，推荐使用迭代器</p>
-<p>###zip函数</p>
-<pre><code>&gt;&gt;&gt;a=&apos;hello&apos;
+<h3 id="zip_u51FD_u6570"><a href="#zip_u51FD_u6570" class="headerlink" title="zip函数"></a>zip函数</h3><pre><code>&gt;&gt;&gt;a=&apos;hello&apos;
 &gt;&gt;&gt;b=&apos;wherever&apos;
 &gt;&gt;&gt;zip(a,b)
 [(&apos;h&apos;,&apos;w&apos;),(&apos;e&apos;,&apos;h&apos;),(&apos;l&apos;,e&apos;),(&apos;l&apos;,&apos;r&apos;),(&apos;o&apos;,&apos;e&apos;)]
@@ -666,18 +653,18 @@ cindy 3
 {&apos;amy&apos;:8,&apos;bob&apos;:6,&apos;cindy&apos;:3}
 &gt;&gt;&gt;dict(zip(adict.values(),adict.keys())))
 {8:&apos;amy&apos;,6:&apos;bob&apos;,3:&apos;cindy&apos;}
-</code></pre><p>###enumerate<br>enumerate是枚举类型的对象，带索引值，如：</p>
+</code></pre><h3 id="enumerate"><a href="#enumerate" class="headerlink" title="enumerate"></a>enumerate</h3><p>enumerate是枚举类型的对象，带索引值，如：</p>
 <pre><code>&gt;&gt;&gt;for k,v in enumerate(adict,start=1):
        print k,v
 1 amy
 2 bob
 3 cindy
 </code></pre><p>enumerate对象的内容可以用list进行转换，也就是说是可以迭代的</p>
-<p>###list解析<br>去掉每个元素前后的逗号</p>
+<h3 id="list_u89E3_u6790"><a href="#list_u89E3_u6790" class="headerlink" title="list解析"></a>list解析</h3><p>去掉每个元素前后的逗号</p>
 <pre><code>&gt;&gt;&gt;squares=[&apos;,111&apos;,&apos;23,43&apos;,&apos;354,&apos;]
 &gt;&gt;&gt;[i.strip(&apos;,&apos;) for i in squares]
 [&apos;111&apos;,&apos;23,43&apos;,&apos;354&apos;]
-</code></pre><p>###while语句<br>while…less循环<br>while的循环条件不满足后就执行less中的语句</p>
+</code></pre><h3 id="while_u8BED_u53E5"><a href="#while_u8BED_u53E5" class="headerlink" title="while语句"></a>while语句</h3><p>while…less循环<br>while的循环条件不满足后就执行less中的语句</p>
 <pre><code>&gt;&gt;&gt;a=0
 &gt;&gt;&gt;while a&lt;3:
        print a,
@@ -686,31 +673,25 @@ cindy 3
 0 1 2 
 3 is not less than 3
 </code></pre><p>for…else循环<br>同样else后的语句也是在for所有循环后做</p>
-<p>##4、文件</p>
-<p>###打开读取文件</p>
-<pre><code>&gt;&gt;&gt;f=open(&apos;130.txt&apos;)
+<h2 id="4_u3001_u6587_u4EF6"><a href="#4_u3001_u6587_u4EF6" class="headerlink" title="4、文件"></a>4、文件</h2><h3 id="u6253_u5F00_u8BFB_u53D6_u6587_u4EF6"><a href="#u6253_u5F00_u8BFB_u53D6_u6587_u4EF6" class="headerlink" title="打开读取文件"></a>打开读取文件</h3><pre><code>&gt;&gt;&gt;f=open(&apos;130.txt&apos;)
 &gt;&gt;&gt;for line in f:
        print line
 &gt;&gt;&gt;f.close()
-</code></pre><p>###创建写入文件</p>
-<pre><code>&gt;&gt;&gt;f=open(&apos;131.txt&apos;,&apos;w&apos;)
+</code></pre><h3 id="u521B_u5EFA_u5199_u5165_u6587_u4EF6"><a href="#u521B_u5EFA_u5199_u5165_u6587_u4EF6" class="headerlink" title="创建写入文件"></a>创建写入文件</h3><pre><code>&gt;&gt;&gt;f=open(&apos;131.txt&apos;,&apos;w&apos;)
 &gt;&gt;&gt;f.write(&apos;hello, world.&apos;)
 &gt;&gt;&gt;f.close()
-</code></pre><p>###使用with</p>
-<pre><code>&gt;&gt;&gt;with open(&apos;131.txt&apos;,&apos;a&apos;) as f:
+</code></pre><h3 id="u4F7F_u7528with"><a href="#u4F7F_u7528with" class="headerlink" title="使用with"></a>使用with</h3><pre><code>&gt;&gt;&gt;with open(&apos;131.txt&apos;,&apos;a&apos;) as f:
        f.write(&quot;\n This is about with\n&quot;)
 ...
 &gt;&gt;&gt;with open(&apos;131.txt&apos;,&apos;r&apos;) as f:
        print f.read()
 </code></pre><p>其中a是追加模式，即一打开文件光标就移到文件尾端，如果不存在这个文件则会创建文件。<br>使用with方法就不用close()了，可以执行完操作自动关闭文件。</p>
-<p>###查看文件状态</p>
-<pre><code>&gt;&gt;&gt;import os
+<h3 id="u67E5_u770B_u6587_u4EF6_u72B6_u6001"><a href="#u67E5_u770B_u6587_u4EF6_u72B6_u6001" class="headerlink" title="查看文件状态"></a>查看文件状态</h3><pre><code>&gt;&gt;&gt;import os
 &gt;&gt;&gt;file_stat=os.stat(&apos;baiducookie.txt&apos;)
 &gt;&gt;&gt;file_stat #可以查看文件状态
 &gt;&gt;&gt;import time
 &gt;&gt;&gt;time.localtime(file_stat.st_ctime)#可以查看文件创建时间
-</code></pre><p>###read/readline/readlines</p>
-<p>read方法，如果指定了参数就读这么长的文件，如果没指定参数就读取全文，把读出来的内容全部放到一个字符串中。<br>readline()方法，执行一次读一行，可迭代。<br>readlines()方法，先执行readline()方法，将文件中的每行变成一个列表的元素存储在一个列表中，然后返回列表，也是可迭代的</p>
+</code></pre><h3 id="read/readline/readlines"><a href="#read/readline/readlines" class="headerlink" title="read/readline/readlines"></a>read/readline/readlines</h3><p>read方法，如果指定了参数就读这么长的文件，如果没指定参数就读取全文，把读出来的内容全部放到一个字符串中。<br>readline()方法，执行一次读一行，可迭代。<br>readlines()方法，先执行readline()方法，将文件中的每行变成一个列表的元素存储在一个列表中，然后返回列表，也是可迭代的</p>
 <pre><code>f=open(&apos;131.txt&apos;,&apos;r&apos;)
 while True:
     if not line:
@@ -723,12 +704,12 @@ content#会返回一个列表里面装着131.txt的每一行作为一个元素
 for line in content:
     print line,
 #可以打印整个文件，有分行
-</code></pre><p>###fileinput模块<br>可以用来打开比较大的文件，可迭代</p>
+</code></pre><h3 id="fileinput_u6A21_u5757"><a href="#fileinput_u6A21_u5757" class="headerlink" title="fileinput模块"></a>fileinput模块</h3><p>可以用来打开比较大的文件，可迭代</p>
 <pre><code>&gt;&gt;&gt;import fileinput
 &gt;&gt;&gt;for line in fileinput.input(&apos;131.txt&apos;):
        print line,
        #可以打印整个文件，有分行
-</code></pre><p>##练习<br>1、按照下面的要求实现对列表的操作：</p>
+</code></pre><h2 id="u7EC3_u4E60"><a href="#u7EC3_u4E60" class="headerlink" title="练习"></a>练习</h2><p>1、按照下面的要求实现对列表的操作：</p>
 <p>产生一个列表，其中有40个元素，每个元素是0到100的一个随机整数<br>如果这个列表中的数据代表着某个班级40人的分数，请计算成绩低于平均分的学生人数，并输出<br>对上面的列表元素从大到小排序</p>
 <pre><code>import random
 l = []
@@ -844,393 +825,12 @@ b = a.split()
 
       
         
-          
-            <p>##1、整数除整数。<br>结果是整数，但不是四舍五入，而是直接取整数。<br>除数与被除数中只要有一个数是浮点数，结果就是浮点数。<br>四舍五入用round()函数</p>
-<pre><code>&gt;&gt;&gt;2/5
-0
-&gt;&gt;&gt;2.0/5
-0.4
-&gt;&gt;&gt;round(2.3425345,3)
-2.343
-</code></pre><p>##2、引用模块。</p>
-<pre><code>import module1
-from module1 import module1.1
-</code></pre><p>##3、第一个Python程序</p>
-<pre><code>#!usr/bin/env python#引导程序找到Python解释器
-#coding:utf-8#为了显示中文。。
-#first.py
-&quot;&quot;&quot;
-the question is:
-19+24-3*5+8/4=?
-&quot;&quot;&quot;
-a = 19+24-3*5+8/4
-print a
-</code></pre><p>##4、字符串和变量<br>“hello, world”相当于一个字符串对象，如果执行赋值操作<code>a=&quot;hello, world&quot;</code>，则是将字符串对象”hello, world”与a绑定起来，即a指向”hello, world”对象。<br><strong>变量无类型，对象有类型</strong></p>
-<p>###字符串拼接<br>将一个Int类型对象和string类型对象拼接有三种方法：<br>a=”hello”,b=3</p>
-<ul>
-<li>反引号 print a+`b`</li>
-<li>str(a) print a+str(b)</li>
-<li><p>repr(a) print a+repr(b)<br>输出的都是<br><code>&gt;&gt;&gt;hello3</code><br>###原始字符串<br>在字符串对象前加上r可以使字符串打印的时候不要加转义字符可以直接显示字符的原始意。</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>d = “C:\python27”<br>e = r”C:\python27”<br>print d<br> C:<br> python27<br>print e<br> C:\python27<br>d<br> C:\python27<br>e<br> “C:\python27<br>###索引</p>
-<p>a=”helloworld”<br>a[3]<br> ‘l’<br>a.index(‘o’)<br> 4<br>索引位置从0开始算，可以通过索引值来找字符，也可以通过字符找索引值<br>###切片</p>
-<p>a=”hello world”<br>a[2:5]<br> ‘llo’#不包括第5号字符’ ‘<br>c = a[:]<br>c<br> ‘hello world’#c和a都指向”hello world”对象的地址<br>a[:5]<br> ‘hello’#不包括第5号字符’ ‘<br>a[5:]<br> ‘ world’#包括第5号字符’ ‘<br>如果分号后面有数字，所得到的切片，不包含该数字所对应的序号（前包括，后不包括）。<br>###字符串基本操作<br>字符串是一种序列，所有序列都有如下基本操作：</p>
-</blockquote>
-</blockquote>
-</blockquote>
-</li>
-</ul>
-<p>len()：求序列长度</p>
-<ul>
-<li>：连接2个序列</li>
-</ul>
-<ul>
-<li><p>: 重复序列元素<br>in :判断元素是否存在于序列中<br>max() :返回最大值<br>min() :返回最小值<br>cmp(str1,str2) :比较2个序列值是否相同<br>###字符串格式化输出</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>print “I am %s” %”good”<br>  I am good<br>%s之类的为占位符，类似C语言里的格式化输出。<br>还可以用string.format()方法来格式化，如：</p>
-<p>s = “I am {} years old and I am {}”.format(5,”awesome”)<br>  I am 5 years old and I am awesome<br>用{}替换占位符，在format()方法中将对应的东西按顺序写上就可以</p>
-</blockquote>
-</blockquote>
-</blockquote>
-</li>
-</ul>
-<p>##5、列表List</p>
-<p>###定义</p>
-<pre><code>&gt;&gt;&gt;a=[]  #定义了变量a，是list类型，且为空
-&gt;&gt;&gt;type(a)
-&lt;type &apos;list&apos;&gt;
-&gt;&gt;&gt;bool(a)
-False  #a为空所以布尔函数返回假
-&gt;&gt;&gt;print a
-[]
-&gt;&gt;&gt;a=[&apos;2&apos;,&apos;5&apos;,&apos;hello&apos;,&apos;6&apos;]
-&gt;&gt;&gt;bool(a)
-True
-&gt;&gt;&gt;print a
-[&apos;2&apos;,&apos;5&apos;,&apos;hello&apos;,&apos;6&apos;]
-</code></pre><p>###索引和切片<br>操作与str类型的索引切片操作类似，只不过是以元素为单位。<br>从右开始的切片：</p>
-<pre><code>&gt;&gt;&gt;a[:-1]
-[&apos;2&apos;,&apos;5&apos;,&apos;hello&apos;]
-&gt;&gt;&gt;a[-3:]
-[&apos;5&apos;,&apos;hello&apos;,&apos;6&apos;]
-</code></pre><p>右边第一个是-1号，左边的数字一定要小于右边的数字</p>
-<p>###反转</p>
-<pre><code>&gt;&gt;&gt;b=[1,2,3,4,5]
-&gt;&gt;&gt;b[::-1]
-&gt;&gt;&gt;b
-[5,4,3,2,1]
-&gt;&gt;&gt;b[::-2]
-&gt;&gt;&gt;b
-[5,3,1]
-</code></pre><p>还可以用reversed()函数进行反转操作</p>
-<pre><code>&gt;&gt;&gt;list(reversed(b))
-[5,4,3,2,1]
-</code></pre><p>反转是生成了一个新的值，并不是将原来的值修改了</p>
-<pre><code>&gt;&gt;&gt;c=list(reversed(b))
-&gt;&gt;&gt;c
-[5,4,3,2,1]
-&gt;&gt;&gt;id(c)
-36861672
-&gt;&gt;&gt;b
-[1,2,3,4,5]
-&gt;&gt;&gt;id(b)
-36851747
-</code></pre><p>###list函数</p>
-<p>####append()、extend()、len()</p>
-<pre><code>b.append(6)
-&gt;&gt;&gt;b
-[1,2,3,4,5,6]
-&gt;&gt;&gt;c=&quot;abc&quot;
-&gt;&gt;&gt;b.extend(c)
-&gt;&gt;&gt;b
-[1,2,3,4,5,6,&apos;a&apos;,&apos;b&apos;,&apos;c&apos;]
-</code></pre><p>extend的对象是一个list，如果是str，则python会先把它按照字符为单位转化为list再追加到已知list。但b的地址在经过extend扩容后并不会改变，也就是说在内存中不变，但内容增加了。<br><strong>也就是说，列表是可以原地修改的，并非复制一个新的。*</strong><br>append修改也同理。<br><strong>二者都是原地修改列表，没有返回值，也就不能赋值给某个变量</strong></p>
-<pre><code>&gt;&gt;&gt;len(b)
-9
-&gt;&gt;&gt;b.append([&apos;9&apos;,&apos;0&apos;])#append()只接收一个参数
-&gt;&gt;&gt;b
-[1,2,3,4,5,6,&apos;a&apos;,&apos;b&apos;,&apos;c&apos;,[&apos;9&apos;,&apos;0&apos;]]
-&gt;&gt;&gt;len(b)
-10
-</code></pre><p>append()整体接收，extend个体化扩编</p>
-<p>####count和index</p>
-<pre><code>&gt;&gt;&gt;b.count(1)
-1   #1在列表b中出现一次
-&gt;&gt;&gt;b.index(5)
-4   #5出现在列表b中第4号的位置
-</code></pre><p>####insert<br>insert可以把元素追加在任意位置<br>insert接收两个参数，第一个是索引位置，第二个是要追加的元素</p>
-<pre><code>&gt;&gt;&gt;b.insert(0,&apos;c&apos;)
-&gt;&gt;&gt;b
-[&apos;0&apos;,1,2,3,4,5,6,&apos;a&apos;,&apos;b&apos;,&apos;c&apos;,[&apos;9&apos;,&apos;0&apos;]]
-</code></pre><p>如果第一个参数指示的那个位置已经超过了最大索引值，会自动将所要插入的元素放到列表的尾部，即追加。</p>
-<p>####pop和remove</p>
-<pre><code>&gt;&gt;&gt;b.remove(1)
-&gt;&gt;&gt;b
-[&apos;0&apos;,2,3,4,5,6,&apos;a&apos;,&apos;b&apos;,&apos;c&apos;,[&apos;9&apos;,&apos;0&apos;]]
-</code></pre><p>remove()函数删掉第一个出现的与remove函数中参数相同的那个元素<br>如果所要删除的内容不再列表中就会报错</p>
-<pre><code>&gt;&gt;&gt;b.pop()#默认删除最后一个元素
-[&apos;9&apos;,&apos;0&apos;]#会返回要删除的那个元素的值
-&gt;&gt;&gt;b
-[&apos;0&apos;,2,3,4,5,6,&apos;a&apos;,&apos;b&apos;,&apos;c&apos;]
-&gt;&gt;&gt;b.pop(0)#删除第0个元素
-&apos;0&apos;#返回要删除的元素的值
-&gt;&gt;&gt;b
-[2,3,4,5,6,&apos;a&apos;,&apos;b&apos;,&apos;c&apos;]
-</code></pre><p>####reverse函数<br>注意不是reversed，reverse函数会在原地址上修改，不是另外生成列表，所以没有返回值</p>
-<pre><code>&gt;&gt;&gt;b.reverse()
-&gt;&gt;&gt;b
-[&apos;c&apos;,&apos;b&apos;,&apos;a&apos;,6,5,4,3,2]
-</code></pre><p>####sort函数</p>
-<pre><code>&gt;&gt;&gt;b.sort(reverse=True)#从小到大排序，若为False则是从大到小
-&gt;&gt;&gt;b
-[2,3,4,5,6,&apos;a&apos;,&apos;b&apos;,&apos;c&apos;]
-</code></pre><p>sort()中有一个key参数可以带参数设置按什么排序，如sort(key=len)就是以字符串长度为关键字排序</p>
-<p>####str.split()与”[sep]”.join(list)<br>split()可以用来将str转化为list<br>join()则可将list转为str</p>
-<pre><code>&gt;&gt;&gt;line=&quot;hello, I am Baymax, your private health keeper&quot;
-&gt;&gt;&gt; line.split(&quot;,&quot;)#以逗号为分隔符可以得到list
-[&apos;hello&apos;,&apos; I am Baymax&apos;,&apos; your private health keeper&apos;]
-&gt;&gt;&gt; line.split(&quot;,&quot;，1)  #1可以规定分隔符的位置，比如只截到第1个“，”就结束
-[&apos;hello&apos;,&apos; I am Baymax, your private health keeper&apos;]
-</code></pre><p>如果split()不输入任何参数，显示就是见到任何分割符号，就用其分割了。</p>
-<p>join像split的逆运算</p>
-<pre><code>&gt;&gt;&gt;lin1=line.split(&quot;,&quot;)
-&gt;&gt;&gt;lin1
-[&apos;hello&apos;,&apos; I am Baymax&apos;,&apos; your private health keeper&apos;]
-&gt;&gt;&gt;&quot;%&quot;.join(lin1)
-&apos;hello% I am Baymax% your private health keeper
-#可以用“%”把list里的每个元素连起来成为新的str
-</code></pre><p>##6、元组tuple</p>
-<p>###定义<br>一个元组中可以存储多个任意Python数据类型的对象，用逗号隔开，元组用圆括号括起来，同str和list一样，都是一种序列型的数据类型，元素不可更改</p>
-<pre><code>&gt;&gt;&gt;t=1,&quot;23&quot;,line,(&quot;python&quot;,2.7)
-&gt;&gt;&gt;t
-(1,&apos;23&apos;,&apos;hello, I am Baymax, your private health keeper&apos;,(&apos;python&apos;,2.7))
-&gt;&gt;&gt;t[1]
-&apos;23&apos;
-&gt;&gt;&gt;t[3][1]
-2.7
-</code></pre><p>tuple类型元素不可更改像str，但元素可以是任何类型数据像list。list用方括号[]括起，tuple用圆括号()括起<br>注意，如果一个元组中只有一个元素的时候，应该在该元素后面加一个半角的英文逗号。如果不加那个逗号，就不是元组，加了才是。</p>
-<p>###转化<br>list和tuple可以实现两者互相转化，分别用list()和tuple()实现</p>
-<pre><code>&gt;&gt;&gt;tls=list(t)
-&gt;&gt;&gt;tls
-[1,&apos;23&apos;,&apos;hello, I am Baymax, your private health keeper&apos;,(&apos;python&apos;,2.7)]
-&gt;&gt;&gt;lst=tuple(tls)
-&gt;&gt;&gt;lst
-(1,&apos;23&apos;,&apos;hello, I am Baymax, your private health keeper&apos;,(&apos;python&apos;,2.7))
-</code></pre><p>##7、字典<br>一个字典里包含两个列表，这种数据类型叫dict</p>
-<p>###创建dict<br>方法1：创建空dict</p>
-<pre><code>&gt;&gt;&gt;mydict={}
-&gt;&gt;&gt;mydict
-{}
-&gt;&gt;&gt;mydict={&apos;amy&apos;:4,&apos;bob&apos;:2,&apos;cindy&apos;:5}
-&gt;&gt;&gt;mydict
-{&apos;amy&apos;:4,&apos;bob&apos;:2,&apos;cindy&apos;:5}
-</code></pre><p>‘amy’:4为键值对，前面的’amy’是键，后面4是值，在每一个dict中键是唯一的，而值可以重复</p>
-<pre><code>&gt;&gt;&gt;id(mydict)
-35928080
-&gt;&gt;&gt;mydict[&apos;david&apos;]=8
-&gt;&gt;&gt;mydict
-{&apos;amy&apos;:4,&apos;bob&apos;:2,&apos;cindy&apos;:5,&apos;david&apos;:8}
-&gt;&gt;&gt;id(mydict)
-35928080
-</code></pre><p><strong>dict类型可以原地修改，故对dict做修改时不会返回值</strong><br>方法2：用元组建构字典，就是把一个键值对构造成一个list，多个list构造成元组，再用dict()类型转换成字典类型</p>
-<pre><code>&gt;&gt;&gt;name=([&apos;amy&apos;,8],[&apos;bob&apos;,6])
-&gt;&gt;&gt;name1=dict(name)
-&gt;&gt;&gt;name1
-{&apos;amy&apos;:8,&apos;bob&apos;:6}
-</code></pre><p>也可以直接赋值转换</p>
-<pre><code>&gt;&gt;&gt;ad=dict(name=&apos;amy&apos;,age=5)
-&gt;&gt;&gt;ad
-{&apos;age&apos;:4, &apos;name&apos;: &apos;amy&apos;}
-</code></pre><p>方法3：使用fromkeys</p>
-<pre><code>&gt;&gt;&gt;website={}.fromkeys((&apos;amy&apos;,&apos;bob&apos;),8)
-#空字典，使用fromkeys，键是&apos;amy&apos;和&apos;bob&apos;，用一个元组表示，值是8
-&gt;&gt;&gt;website
-{&apos;amy&apos;:8,&apos;bob&apos;:8}#这种方法会重新生成一个字典
-</code></pre><p><strong>字典中的键的数据类型不可变，而值可以是任意数据类型，也就是说键的数据类型不能是列表元组字典等可变的，而可以是整型str等不可变的数据类型，另外要注意键的数据类型不一定要固定，一个字典中的不同键的数据类型既可以是str也可以是int</strong> 如：</p>
-<pre><code>&gt;&gt;&gt;website={&apos;amy&apos;:8, 9:&apos;bob&apos;}
-&gt;&gt;&gt;website
-{&apos;amy&apos;:8, 9:&apos;bob&apos;}
-</code></pre><p>dict是键值对映射，可以通过键访问或修改dict中的对应值<br>因此dict类型是没有顺序，也就没有索引和切片了</p>
-<p>###基本操作</p>
-<pre><code>&gt;&gt;&gt;mydict
-{&apos;amy&apos;:4,&apos;bob&apos;:2,&apos;cindy&apos;:5,&apos;david&apos;:8}
-</code></pre><p>len(d)，返回字典(d)中的键值对的数量</p>
-<pre><code>&gt;&gt;&gt;len(mydict)
-4
-</code></pre><p>d[key]，返回字典(d)中的键(key)的值</p>
-<pre><code>&gt;&gt;&gt;mydict[&apos;cindy&apos;]
-5
-</code></pre><p>d[key]=value，将值(value)赋给字典(d)中的键(key)</p>
-<pre><code>&gt;&gt;&gt;mydict[&apos;cindy&apos;]=8#修改cindy的值
-&gt;&gt;&gt;mydict
-{&apos;amy&apos;:4,&apos;bob&apos;:2,&apos;cindy&apos;:8,&apos;david&apos;:8}
-&gt;&gt;&gt;mydict[&apos;eirc&apos;]=3#增加eric键值对
-&gt;&gt;&gt;mydict
-{&apos;amy&apos;:4,&apos;bob&apos;:2,&apos;cindy&apos;:8,&apos;david&apos;:8,&apos;eric&apos;:3}
-</code></pre><p>del d[key]，删除字典(d)的键(key)项（将该键值对删除）</p>
-<pre><code>&gt;&gt;&gt;del mydict[&apos;david&apos;]
-&gt;&gt;&gt;mydict
-{&apos;amy&apos;:4,&apos;bob&apos;:2,&apos;cindy&apos;:5}
-</code></pre><p>key in d，检查字典(d)中是否含有键为key的项</p>
-<pre><code>&gt;&gt;&gt;&apos;amy&apos; in mydict
-True
-</code></pre><p>###字典方法</p>
-<p>####拷贝copy</p>
-<pre><code>&gt;&gt;&gt;a=5
-&gt;&gt;&gt;b=5
-&gt;&gt;&gt;b
-5
-&gt;&gt;&gt;id(a)
-30976456
-&gt;&gt;&gt;id(b)
-30976456
-</code></pre><p><strong><em>对象有类型，变量无类型</em></strong><br>两个变量a和b指向了同一个int类对象5，指向的是内存中同一个地址，只是给这块地址贴了2个标签而已</p>
-<pre><code>&gt;&gt;&gt;a=mydict
-&gt;&gt;&gt;a
-{&apos;amy&apos;:4,&apos;bob&apos;:2,&apos;cindy&apos;:8,&apos;david&apos;:8}
-&gt;&gt;&gt;id(a)==id(mydict)
-True
-</code></pre><p>字典也是一样<br>下面使用copy方法：</p>
-<pre><code>&gt;&gt;&gt;a=mydict.copy()
-#注意mydict是字典类的一个对象，而copy是字典类的方法，对象调用类的方法
-&gt;&gt;&gt;a
-{&apos;amy&apos;:4,&apos;bob&apos;:2,&apos;cindy&apos;:8,&apos;david&apos;:8}
-&gt;&gt;&gt;id(a)==id(mydict)
-False
-</code></pre><p>使用copy方法复制字典的会在内存另辟空间<br>但这种方法只能实现“浅拷贝”，也就是说Python在复制的时候如果对象是简单的数据类型如int,str等就会在内存中新开辟空间，但如果复制的对象是复杂类型如list、tuple、dict等则会让标签也即变量指向这个对象，不会重新开一块内存来复制这个对象。</p>
-<pre><code>&gt;&gt;&gt;dict1={&apos;name&apos;=[&apos;amy&apos;,&apos;bob&apos;],&apos;age&apos;=8}
-&gt;&gt;&gt;dict1
-{&apos;name&apos;=[&apos;amy&apos;,&apos;bob&apos;],&apos;age&apos;=8}
-&gt;&gt;&gt;id(dict1)
-30616288
-&gt;&gt;&gt;dict2=dict1.copy()
-&gt;&gt;&gt;dict2
-{&apos;name&apos;=[&apos;amy&apos;,&apos;bob&apos;],&apos;age&apos;=8}
-&gt;&gt;&gt;id(dict2)
-30616288      #dict1和dict2的内存地址不同
-&gt;&gt;&gt;id(dict1[&quot;name&quot;])
-36162376
-&gt;&gt;&gt;id(dict2[&quot;name&quot;])
-36162376         #key name指向的对象的地址是一样的
-&gt;&gt;&gt;dict1[&quot;name&quot;].append(&apos;david&apos;)
-&gt;&gt;&gt;dict1
-{&apos;name&apos;=[&apos;amy&apos;,&apos;bob&apos;,&apos;david&apos;],&apos;age&apos;=8}
-&gt;&gt;&gt;dict2
-{&apos;name&apos;=[&apos;amy&apos;,&apos;bob&apos;,&apos;david&apos;],&apos;age&apos;=8}
-</code></pre><p>也就是说，如果修改了dict1的name字段的值，dict2同样也会被修改，因为修改是在原有的list对象上修改。<br>解决这个问题可以用深拷贝（deepcopy）</p>
-<pre><code>import copy
-&gt;&gt;&gt;dict2=copy.deepcopy(dict1)
-&gt;&gt;&gt;id(dict1[&apos;name&apos;])
-36188488
-&gt;&gt;&gt;id(dict2[&apos;name&apos;])
-36190208
-</code></pre><p>但注意，如果dict中的某个键值是复杂类型tuple，因为tuple不可修改，所以即使是用deepcopy也不会得到两个不一样的内存地址，大概是因为Python认为反正tuple都不可修改了，所以用一个地址也没关系吧。</p>
-<p>####清空clear<br>用clear方法可清空一个字典，但内存中仍然保留，也就是说把本来有内容的字典变成了{}的形式,但是如果用del方法的话就是从内存中删掉了</p>
-<pre><code>&gt;&gt;&gt;id(dict1)
-30616288
-&gt;&gt;&gt;dict1.clear()
-&gt;&gt;&gt;dict1
-{}
-&gt;&gt;&gt;id(dict1)
-30616288
-&gt;&gt;&gt;del dict1
-&gt;&gt;&gt;id(dict1)
-Traceback (most recent call last):
-  File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;
-NameError: name &apos;dict1&apos; is not defined
-</code></pre><p>####get,setdefault<br>get方法是字典中有这个键就返回它的值，没有就另说</p>
-<pre><code>&gt;&gt;&gt;dict2
-{&apos;name&apos;=[&apos;amy&apos;,&apos;bob&apos;],&apos;age&apos;=8}
-&gt;&gt;&gt;dict2.get(&apos;age&apos;)
-8
-&gt;&gt;&gt;print dict2.get(&apos;ad&apos;)
-None
-&gt;&gt;&gt;print dict2.get(&apos;ad&apos;,&apos;sorry&apos;)
-&apos;sorry&apos;
-#若找不到这个键值就返回后面的‘sorry’
-</code></pre><p>D.setdefault()的功能与D.get()类似，都是在字典里找有没有对应的键值，但setdefault方法有所不同。D.setdefault(d,k),现在字典里找有没有‘d’这个键，如果有就返回它的值，如果没有就将d:k作为新的键值对添加到字典中，若不指定k则会将d的键值置为None。</p>
-<pre><code>&gt;&gt;&gt;dict2
-{&apos;name&apos;=[&apos;amy&apos;,&apos;bob&apos;],&apos;age&apos;=8}
-&gt;&gt;&gt;dict2.setdefault(&apos;age&apos;,&apos;sorry&apos;)
-8
-&gt;&gt;&gt;dict2.setdefault(&apos;ad&apos;,&apos;sorry&apos;)
-&gt;&gt;&gt;dict2
-{&apos;name&apos;=[&apos;amy&apos;,&apos;bob&apos;],&apos;age&apos;=8, &apos;ad&apos;:&apos;sorry&apos;}
-&gt;&gt;&gt;dict2.setdefault(&apos;adb&apos;)
-{&apos;name&apos;=[&apos;amy&apos;,&apos;bob&apos;],&apos;adb&apos;:None, &apos;age&apos;=8, &apos;ad&apos;:&apos;sorry&apos;}
-</code></pre><p>####items/iteritems, keys/iterkeys, values/itervalues<br>items可以输出一个字典列表，列表中的元素是由字典中的键和值组成的元组。而iteritems得到的是一个字典型迭代器，需要转换成list才能查看</p>
-<pre><code>&gt;&gt;&gt;dict2
-{&apos;name&apos;=[&apos;amy&apos;,&apos;bob&apos;],&apos;age&apos;=8}
-&gt;&gt;&gt;dict3=dict2.items()
-[(&apos;name&apos;,[&apos;amy&apos;,&apos;bob&apos;]),(&apos;age&apos;,8)]
-&gt;&gt;&gt;dict2
-{&apos;name&apos;=[&apos;amy&apos;,&apos;bob&apos;],&apos;age&apos;=8}
-&gt;&gt;&gt;dict3=dict2.iteritems()
-&gt;&gt;&gt;dict3
-&lt;dictionary-itemiterator object at 0x01D35B40&gt;
-&gt;&gt;&gt;list(dict3)
-[(&apos;name&apos;,[&apos;amy&apos;,&apos;bob&apos;]),(&apos;age&apos;,8)]
-</code></pre><p>keys返回由字典中的键组成的list,iterkeys()返回迭代器</p>
-<pre><code>&gt;&gt;&gt;dict2.keys()
-[&apos;name,&apos;age&apos;]
-</code></pre><p>values返回由字典中的所有键值组成的list,itervalues()返回迭代器</p>
-<pre><code>&gt;&gt;&gt;dict2.values()
-[[&apos;amy,&apos;bob&apos;],8]
-</code></pre><p>####删除方法pop,popitem<br>D.pop(k[,d])是以字典的键为参数，删除指定键的键值对,pop函数中的参数是不能省略的，有意思的是D.popitem()倒是跟list.pop()有相似之处，不用写参数（list.pop是可以不写参数），但是，D.popitem()不是删除最后一个，前面已经交代过了，dict没有顺序，也就没有最后和最先了，它是随机删除一个，并将所删除的返回。</p>
-<p>####update方法<br>更新字典内容D1.update(D2),将D2的内容加到D1里去，若有重叠的内容则不再重复，而D2并未受到影响</p>
-<pre><code>&gt;&gt;&gt;dict2
-{&apos;name&apos;=[&apos;amy&apos;,&apos;bob&apos;],&apos;age&apos;=8}
-&gt;&gt;&gt;dict2.update([(&apos;sex&apos;,&apos;male&apos;),(&apos;location&apos;,&apos;DC&apos;)])
-{&apos;name&apos;=[&apos;amy&apos;,&apos;bob&apos;],&apos;age&apos;=8,&apos;sex&apos;:&apos;male&apos;,&apos;location&apos;:&apos;DC&apos;}
-</code></pre><p>####has_key方法</p>
-<pre><code>&gt;&gt;&gt;dict2.has_key(&apos;name&apos;)
-True
-&gt;&gt;&gt;dict2.has_key(&apos;ad&apos;)
-False
-</code></pre><p>这个方法的功能与tuple和list中的 x in t差不多</p>
-<p>##8、集合set</p>
-<p>###创建定义集合<br>集合的特点：<strong><em>有的可变，有的不可变，不可重复，元素无次序</em></strong><br>融合了list与dict的特点<br>创建集合的时候如果发现了重复元素会自动只留下一个</p>
-<pre><code>&gt;&gt;&gt;s=set([&apos;amy&apos;,&apos;bob&apos;])
-&gt;&gt;&gt;s
-set([&apos;amy&apos;,&apos;bob&apos;])
-&gt;&gt;&gt;s1=set(&apos;hello&apos;)
-&gt;&gt;&gt;s1
-set([&apos;h&apos;,&apos;e&apos;,&apos;l&apos;,&apos;o&apos;])
-</code></pre><p>分别用list()和set()能够实现两种数据类型之间的转化。<br>特别说明，利用set()建立起来的集合是可变集合，可变集合都是unhashable类型的。不可哈希类型的数据可以改变，可哈希的不能改变，而set中的元素必须是可哈希的</p>
-<p>###集合方法</p>
-<p>####add,update</p>
-<pre><code>&gt;&gt;&gt;s1.add(&apos;gj&apos;)
-set([&apos;h&apos;,&apos;e&apos;,&apos;l&apos;,&apos;o&apos;,&apos;gj&apos;])
-&gt;&gt;&gt;s1.update(&apos;sdf&apos;)
-set([&apos;e&apos;,&apos;d&apos;,&apos;f&apos;,&apos;h&apos;,&apos;l&apos;,&apos;o&apos;,&apos;s&apos;,&apos;gj&apos;])#貌似自动按字母排序了
-</code></pre><p>####pop,remove,discard,clear<br>set.pop()是从set中任意选一个元素,删除并将这个值返回.但是,不能指定删除某个元素.报错信息中就告诉我们了,pop()不能有参数.此外,如果set是空的了,也报错</p>
-<pre><code>&gt;&gt;&gt;s1.pop()
-&apos;e&apos;
-&gt;&gt;&gt;s1.pop(&apos;d&apos;)
-报错
-</code></pre><p>如果要删除指定元素可以用remove()或discard()<br>但如果要删除的元素在集合中没有，如果是remove()方法的话，就会报错，如果是discard()方法的话就什么也不做</p>
-<pre><code>&gt;&gt;&gt;s1
-set([&apos;d&apos;,&apos;f&apos;,&apos;h&apos;,&apos;l&apos;,&apos;o&apos;,&apos;s&apos;,&apos;gj&apos;])
-&gt;&gt;&gt;s1.remove(&apos;d&apos;)
-&gt;&gt;&gt;s1
-set([&apos;f&apos;,&apos;h&apos;,&apos;l&apos;,&apos;o&apos;,&apos;s&apos;,&apos;gj&apos;])
-&gt;&gt;&gt;s1.remove(&apos;d&apos;)
-报错
-&gt;&gt;&gt;s1.discard(&apos;d&apos;)
-&gt;&gt;&gt;s1.discard(&apos;gj&apos;)
-set([&apos;f&apos;,&apos;h&apos;,&apos;l&apos;,&apos;o&apos;,&apos;s&apos;])
-</code></pre><p>#9、Summary<br>回顾了Python中的各种数据类型，包括int/bool/str/list/tuple/dict/set，其中int/bool/str/tuple,也叫可哈希的，而list和dict是可修改的，也称为不可哈希的数据类型。str,list,tuple是有序序列，支持索引和切片，而dict和set是无序序列，不支持索引和切片。</p>
-<ul>
-<li>str的基本操作包括：求长len()，连接+,重复*，判断元素是否在序列中in,返回最大值max(),最小值min()，比较相同cmp(a,b)，切分split和连接join；</li>
-<li>list的方法包括：添加（append(),extend()),求长len()，数一个元素出现的次数count(),查找index()，删除（pop(),remove()），逆转reverse(),排序sort(),切分split()和连接join()</li>
-<li>dict的方法包括：copy拷贝, clear清空, get/setdefault取键值, items/keys/values得到键值对/键/值的序列, pop/popitem删除, update更新, has_key看有没有这个键</li>
-</ul>
-
-          
+          <p>Python基础语法<br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/02/03/1/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>

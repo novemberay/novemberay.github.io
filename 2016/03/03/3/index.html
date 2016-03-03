@@ -57,43 +57,40 @@
 
 
 
-<meta name="description" content="变量本质是占位符变量赋值原理：a=2首先创建了一个int型对象2，然后创建了占位符a，再将a与2这个对象绑定起来完成赋值，实际上是a指向了内存中的对象2.
-##1、建立函数
-#!/usr/bin/env python
+<meta name="description" content="变量本质是占位符 变量赋值原理：a=2首先创建了一个int型对象2，然后创建了占位符a，再将a与2这个对象绑定起来完成赋值，实际上是a指向了内存中的对象2.
+1、建立函数#!/usr/bin/env python
 #coding:utf-8
 
 def addnumber(a,b):  #函数声明，括号内是函数的参数，不能少冒号
     c = a+b
     print c
 
-if __nam">
+if __name_">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python复习笔记3——函数">
 <meta property="og:url" content="http://novemberay.github.io/2016/03/03/3/index.html">
 <meta property="og:site_name" content="Hallo">
-<meta property="og:description" content="变量本质是占位符变量赋值原理：a=2首先创建了一个int型对象2，然后创建了占位符a，再将a与2这个对象绑定起来完成赋值，实际上是a指向了内存中的对象2.
-##1、建立函数
-#!/usr/bin/env python
+<meta property="og:description" content="变量本质是占位符 变量赋值原理：a=2首先创建了一个int型对象2，然后创建了占位符a，再将a与2这个对象绑定起来完成赋值，实际上是a指向了内存中的对象2.
+1、建立函数#!/usr/bin/env python
 #coding:utf-8
 
 def addnumber(a,b):  #函数声明，括号内是函数的参数，不能少冒号
     c = a+b
     print c
 
-if __nam">
-<meta property="og:updated_time" content="2016-03-03T07:12:35.450Z">
+if __name_">
+<meta property="og:updated_time" content="2016-03-03T07:39:55.003Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python复习笔记3——函数">
-<meta name="twitter:description" content="变量本质是占位符变量赋值原理：a=2首先创建了一个int型对象2，然后创建了占位符a，再将a与2这个对象绑定起来完成赋值，实际上是a指向了内存中的对象2.
-##1、建立函数
-#!/usr/bin/env python
+<meta name="twitter:description" content="变量本质是占位符 变量赋值原理：a=2首先创建了一个int型对象2，然后创建了占位符a，再将a与2这个对象绑定起来完成赋值，实际上是a指向了内存中的对象2.
+1、建立函数#!/usr/bin/env python
 #coding:utf-8
 
 def addnumber(a,b):  #函数声明，括号内是函数的参数，不能少冒号
     c = a+b
     print c
 
-if __nam">
+if __name_">
 
 
 
@@ -306,9 +303,8 @@ if __nam">
       
 
       
-        <p><strong>变量本质是占位符</strong><br>变量赋值原理：a=2<br>首先创建了一个int型对象2，然后创建了占位符a，再将a与2这个对象绑定起来完成赋值，实际上是a指向了内存中的对象2.</p>
-<p>##1、建立函数</p>
-<pre><code>#!/usr/bin/env python
+        <p><strong> 变量本质是占位符 </strong><br>变量赋值原理：a=2<br>首先创建了一个int型对象2，然后创建了占位符a，再将a与2这个对象绑定起来完成赋值，实际上是a指向了内存中的对象2.</p>
+<h2 id="1_u3001_u5EFA_u7ACB_u51FD_u6570"><a href="#1_u3001_u5EFA_u7ACB_u51FD_u6570" class="headerlink" title="1、建立函数"></a>1、建立函数</h2><pre><code>#!/usr/bin/env python
 #coding:utf-8
 
 def addnumber(a,b):  #函数声明，括号内是函数的参数，不能少冒号
@@ -332,8 +328,7 @@ if __name__ == &quot;__main__&quot;:
 <pre><code>&quot;&quot;&quot;
 your explanation
 &quot;&quot;&quot;
-</code></pre><p>##3、参数和变量</p>
-<pre><code>&gt;&gt;&gt;def addnumber(x):  # x是形参，用来传对象
+</code></pre><h2 id="3_u3001_u53C2_u6570_u548C_u53D8_u91CF"><a href="#3_u3001_u53C2_u6570_u548C_u53D8_u91CF" class="headerlink" title="3、参数和变量"></a>3、参数和变量</h2><pre><code>&gt;&gt;&gt;def addnumber(x):  # x是形参，用来传对象
        a=10           # a是变量，10是对象
        return a+x   # x是形参作为变量，本质是传递赋给这个函数的对象
 ...
@@ -343,8 +338,7 @@ your explanation
 &gt;&gt;&gt;addnumber(3)
 13
 </code></pre><p>函数名后括号里的东西的作用是传递值</p>
-<p>##4、全局变量、局部变量、命名空间</p>
-<pre><code>a=3
+<h2 id="4_u3001_u5168_u5C40_u53D8_u91CF_u3001_u5C40_u90E8_u53D8_u91CF_u3001_u547D_u540D_u7A7A_u95F4"><a href="#4_u3001_u5168_u5C40_u53D8_u91CF_u3001_u5C40_u90E8_u53D8_u91CF_u3001_u547D_u540D_u7A7A_u95F4" class="headerlink" title="4、全局变量、局部变量、命名空间"></a>4、全局变量、局部变量、命名空间</h2><pre><code>a=3
 def func():
     a=9
     return n
@@ -366,7 +360,7 @@ print func()
 9
 </code></pre><p>global a的作用是声明a是全局变量，函数里外的a是同一个，所以输出的结果都是9.</p>
 <p>命名空间<br>函数内外可能有名字一样的标识符，需要命名空间来对每个变量进行区分，并框定这个变量发生作用的范围。</p>
-<p>##5、参数收集<br>定义函数的时候，在参数前加个“*”可以让这个参数变成可变参数，即可以收集多个参数并塞到一个tuple里</p>
+<h2 id="5_u3001_u53C2_u6570_u6536_u96C6"><a href="#5_u3001_u53C2_u6570_u6536_u96C6" class="headerlink" title="5、参数收集"></a>5、参数收集</h2><p>定义函数的时候，在参数前加个“*”可以让这个参数变成可变参数，即可以收集多个参数并塞到一个tuple里</p>
 <pre><code>&gt;&gt;&gt;def func(a,*arg):
        print a
        result = a
@@ -396,7 +390,7 @@ print func()
 &gt;&gt;&gt;addnumber(*a)
 8
 </code></pre><p>这种方式是把要传的值放到一个元组中，元组中元素的个数要和函数要求的变量个数一致。<br>定义函数的时候可以给一些参数赋默认值，这样在调用的时候就可以不给对应参数赋值</p>
-<p>##6、递归<br>用递归写一个斐波那契数列</p>
+<h2 id="6_u3001_u9012_u5F52"><a href="#6_u3001_u9012_u5F52" class="headerlink" title="6、递归"></a>6、递归</h2><p>用递归写一个斐波那契数列</p>
 <pre><code>&gt;&gt;&gt;def fib(n):
        if n==0:
            return 0
@@ -407,8 +401,7 @@ print func()
 
 &gt;&gt;&gt;fib(10)
 55
-</code></pre><p>##7、函数式编程</p>
-<p>###lambda函数<br>单行函数</p>
+</code></pre><h2 id="7_u3001_u51FD_u6570_u5F0F_u7F16_u7A0B"><a href="#7_u3001_u51FD_u6570_u5F0F_u7F16_u7A0B" class="headerlink" title="7、函数式编程"></a>7、函数式编程</h2><h3 id="lambda_u51FD_u6570"><a href="#lambda_u51FD_u6570" class="headerlink" title="lambda函数"></a>lambda函数</h3><p>单行函数</p>
 <pre><code>&gt;&gt;&gt;a = range(1,11)
 &gt;&gt;&gt;a
 [1,2,3,4,5,6,7,8,9,10]
@@ -424,8 +417,7 @@ print func()
 <li>变量后是冒号，冒号后是表达式，表达式只能有一个</li>
 <li>表达式返回的结果就是函数的返回值</li>
 </ul>
-<p>###map函数</p>
-<pre><code>&gt;&gt;&gt;a = range(1,6)
+<h3 id="map_u51FD_u6570"><a href="#map_u51FD_u6570" class="headerlink" title="map函数"></a>map函数</h3><pre><code>&gt;&gt;&gt;a = range(1,6)
 &gt;&gt;&gt;a
 [1,2,3,4,5]
 &gt;&gt;&gt;map(lambda x:x+3,a)
@@ -445,19 +437,16 @@ print func()
 </blockquote>
 </li>
 </ul>
-<p>###reduce函数</p>
-<pre><code>&gt;&gt;&gt;list1=[1,2,3,4,5]
+<h3 id="reduce_u51FD_u6570"><a href="#reduce_u51FD_u6570" class="headerlink" title="reduce函数"></a>reduce函数</h3><pre><code>&gt;&gt;&gt;list1=[1,2,3,4,5]
 &gt;&gt;&gt;reduce(lambda x,y:x+y, list1)
 15
 </code></pre><p>reduce是逐个元素横着进行运算</p>
-<p>###filter函数</p>
-<pre><code>&gt;&gt;&gt;list1=range(-3,3)
+<h3 id="filter_u51FD_u6570"><a href="#filter_u51FD_u6570" class="headerlink" title="filter函数"></a>filter函数</h3><pre><code>&gt;&gt;&gt;list1=range(-3,3)
 &gt;&gt;&gt;list1
 [-3,-2,-1,0,1,2]
 &gt;&gt;&gt;filter(lambda x:x&gt;0, list1)
 [1,2]
-</code></pre><p>##练习</p>
-<p>###解一元二次方程<br>可以实现用户输入4个参数，解方程后打印结果</p>
+</code></pre><h2 id="u7EC3_u4E60"><a href="#u7EC3_u4E60" class="headerlink" title="练习"></a>练习</h2><h3 id="u89E3_u4E00_u5143_u4E8C_u6B21_u65B9_u7A0B"><a href="#u89E3_u4E00_u5143_u4E8C_u6B21_u65B9_u7A0B" class="headerlink" title="解一元二次方程"></a>解一元二次方程</h3><p>可以实现用户输入4个参数，解方程后打印结果</p>
 <pre><code>#!/usr/bin/env python
 # coding=utf-8
 
@@ -488,7 +477,7 @@ if __name__ == &quot;__main__&quot;:
     print &quot;computing...{}x2+{}x+{}={}&quot;.format(a,b,c,d)
     roots = solutioned(a,b,c,d)
     print &quot;the result is : &quot;, roots`
-</code></pre><p>###2、成绩统计<br>算平均分、排序、找最高分和最低分</p>
+</code></pre><h3 id="2_u3001_u6210_u7EE9_u7EDF_u8BA1"><a href="#2_u3001_u6210_u7EE9_u7EDF_u8BA1" class="headerlink" title="2、成绩统计"></a>2、成绩统计</h3><p>算平均分、排序、找最高分和最低分</p>
 <pre><code>def average_score(scores):
     score_values = grades_sheet.values()
     average = reduce(lambda x,y:x+y, score_values)/len(score_values)
@@ -682,7 +671,7 @@ if __name__ == &quot;__main__&quot;:
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1_u3001_u5EFA_u7ACB_u51FD_u6570"><span class="nav-number">1.</span> <span class="nav-text">1、建立函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3_u3001_u53C2_u6570_u548C_u53D8_u91CF"><span class="nav-number">2.</span> <span class="nav-text">3、参数和变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4_u3001_u5168_u5C40_u53D8_u91CF_u3001_u5C40_u90E8_u53D8_u91CF_u3001_u547D_u540D_u7A7A_u95F4"><span class="nav-number">3.</span> <span class="nav-text">4、全局变量、局部变量、命名空间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5_u3001_u53C2_u6570_u6536_u96C6"><span class="nav-number">4.</span> <span class="nav-text">5、参数收集</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6_u3001_u9012_u5F52"><span class="nav-number">5.</span> <span class="nav-text">6、递归</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7_u3001_u51FD_u6570_u5F0F_u7F16_u7A0B"><span class="nav-number">6.</span> <span class="nav-text">7、函数式编程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#lambda_u51FD_u6570"><span class="nav-number">6.1.</span> <span class="nav-text">lambda函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#map_u51FD_u6570"><span class="nav-number">6.2.</span> <span class="nav-text">map函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#reduce_u51FD_u6570"><span class="nav-number">6.3.</span> <span class="nav-text">reduce函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#filter_u51FD_u6570"><span class="nav-number">6.4.</span> <span class="nav-text">filter函数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u7EC3_u4E60"><span class="nav-number">7.</span> <span class="nav-text">练习</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u89E3_u4E00_u5143_u4E8C_u6B21_u65B9_u7A0B"><span class="nav-number">7.1.</span> <span class="nav-text">解一元二次方程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2_u3001_u6210_u7EE9_u7EDF_u8BA1"><span class="nav-number">7.2.</span> <span class="nav-text">2、成绩统计</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
